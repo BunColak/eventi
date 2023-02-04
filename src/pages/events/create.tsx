@@ -5,7 +5,6 @@ import {
     Select,
     Button,
     Switch,
-    Notification,
     Alert,
     Box,
     LoadingOverlay,
@@ -15,7 +14,6 @@ import { useForm } from '@mantine/form'
 import { IconAlertCircle, IconMail } from "@tabler/icons";
 import Head from "next/head";
 import React from "react";
-import { z } from "zod";
 import EventRichTextEditor from "../../components/EventRichTextEditor";
 import ProposedDatesInput from "../../components/ProposedDatesInput";
 import type { RouterInputs } from "../../utils/api";
@@ -48,17 +46,6 @@ const CreateEvent = () => {
             }
         },
     })
-
-    const onSubmit: React.FormEventHandler = (e) => {
-        e.preventDefault()
-        console.log('wtf')
-        form.onSubmit((values, event) => {
-            console.log('here')
-            mutation.mutate(values)
-        }, errors => {
-            console.log(errors)
-        })
-    }
 
     return (
         <>

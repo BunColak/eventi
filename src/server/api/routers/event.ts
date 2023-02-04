@@ -1,4 +1,3 @@
-import { z } from "zod";
 import { createEventInputSchema } from "../../../utils/schemas";
 
 import { createTRPCRouter, publicProcedure } from "../trpc";

@@ -28,7 +28,7 @@ const ProposedDatesInput: React.FC<PropsedDatesInputProps> = ({ form }) => {
             <Stack my="xs">
                 {form.values.proposedDates.map((item, i) => {
                     return (
-                        <Group align="center" key={i}>
+                        <Group align="center" key={i} my='lg'>
                             <DatePicker placeholder="Today" label="Date" required {...form.getInputProps(`proposedDates.${i}.date`)} />
                             <TimeInput required label="Time" {...form.getInputProps(`proposedDates.${i}.time`)} />
                             <Group>
