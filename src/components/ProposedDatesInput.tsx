@@ -28,30 +28,30 @@ const ProposedDatesInput: React.FC<PropsedDatesInputProps> = ({ form }) => {
             <Stack my="xs">
                 {form.values.proposedDates.map((item, i) => {
                     return (
-                        <Group align="center" key={i} my='lg'>
+                        <Group align="center" key={i} my={{ 'xs': 0, 'base': 'lg' }}>
                             <DatePicker placeholder="Today" label="Date" required {...form.getInputProps(`proposedDates.${i}.date`)} />
                             <TimeInput required label="Time" {...form.getInputProps(`proposedDates.${i}.time`)} />
                             <Group>
-                            {form.values.proposedDates.length > 2 && (
-                                <ActionIcon
-                                    onClick={() => removeDate(i)}
-                                    top={12}
-                                    variant="outline"
-                                    color="red"
-                                >
-                                    <IconTrash size={16} />
-                                </ActionIcon>
-                            )}
-                            {i === form.values.proposedDates.length - 1 && (
-                                <ActionIcon
-                                    onClick={addNewDate}
-                                    top={12}
-                                    variant="filled"
-                                    color="blue"
-                                >
-                                    <IconPlus size={16} />
-                                </ActionIcon>
-                            )}
+                                {form.values.proposedDates.length > 2 && (
+                                    <ActionIcon
+                                        onClick={() => removeDate(i)}
+                                        top={12}
+                                        variant="outline"
+                                        color="red"
+                                    >
+                                        <IconTrash size={16} />
+                                    </ActionIcon>
+                                )}
+                                {i === form.values.proposedDates.length - 1 && (
+                                    <ActionIcon
+                                        onClick={addNewDate}
+                                        top={12}
+                                        variant="filled"
+                                        color="blue"
+                                    >
+                                        <IconPlus size={16} />
+                                    </ActionIcon>
+                                )}
                             </Group>
                         </Group>
                     );
